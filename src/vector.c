@@ -42,5 +42,8 @@ int vec_size(struct vec_t *vec) {
 }
 
 char *vec_pop(struct vec_t *vec, int index) {
-    return vec->url[index];
+    char *tmp = vec->url[index];
+//    free(vec->url[index]);
+    return tmp;
 }
+

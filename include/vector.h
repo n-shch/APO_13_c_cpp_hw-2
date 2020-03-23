@@ -12,9 +12,7 @@ struct vec_t {
 };
 
 struct vec_t *vec_new();
-
 void vec_push(struct vec_t *vec, char *url);
-
 void vec_free(struct vec_t *vec);
 void vec_printf(struct vec_t *vec);
 int vec_size(struct vec_t *vec);
