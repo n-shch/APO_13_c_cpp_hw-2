@@ -9,7 +9,7 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 #include "string.h"
-#include "../include/list.h"
+#include "testy/list.h"
 
 #define ERROR_MSG -1
 
@@ -49,13 +49,10 @@ char *generate_origin_url(char *url) {
     char *n = calloc(sizeof(char), size);
     n = strcpy(n, wget_string);
     n = strcat(n, url);
-//    system(n);
-//    printf("%s",n);
-//    free(wget_string);
     return n;
 }
 
-
+//поиск подстроки в строке, возвращение указателя на начало подстроки с ИНФОРМАЦИЕЙ
 char *search_field(char *mem_space, char *field) {
     char *found = strstr(mem_space, field);
     if (found) {
@@ -93,9 +90,7 @@ int iteration_list_part(char *origin_url, int count, char *origin_dir_name, stru
     char *url_request = generate_origin_url(origin_url);
     if (url_request) {
         system(url_request);
-        if (url_request) {
-            free(url_request);
-        }
+        free(url_request);
     }
 }
 
@@ -108,9 +103,7 @@ int iteration_list(char *origin_url, int count, char *origin_dir_name, struct li
     char *url_request = generate_origin_url(origin_url);
     if (url_request) {
         system(url_request);
-        if (url_request) {
-            free(url_request);
-        }
+        free(url_request);
         int myfd = open("some_file.html",  O_RDWR);
         if (myfd < 0) {
             printf("some_file.html open");

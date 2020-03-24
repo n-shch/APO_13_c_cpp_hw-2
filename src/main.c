@@ -1,4 +1,4 @@
-#include "../include/utils.h"
+#include "testy/utils.h"
 //ну и после этой итерации он остается внутри этой дирректории. Если нужно выйти, то в конце нужно прописать это
 
 int main(int argc, char **argv) {

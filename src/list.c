@@ -4,7 +4,7 @@
 #define _GNU_SOURCE         /* See feature_test_macros(7) */
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/list.h"
+#include "testy/list.h"
 
 int list_size(struct list_t *list) {
     return list->size;
@@ -74,11 +74,8 @@ void list_print(struct list_t *list) {
         if (tmp->url) {
             free(tmp->url);
         }
-        if (tmp) {
-            free(tmp);
-        }
+        free(tmp);
     }
     free(list);
-    return;
 }
 

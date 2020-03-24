@@ -15,7 +15,7 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 #include "string.h"
-#include "../include/list.h"
+#include "list.h"
 
 #define ERROR_MSG -1
 
