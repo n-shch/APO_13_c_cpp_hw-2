@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.10.2)
 project(crawler C)
 enable_language(C CXX ASM)
 set(CMAKE_C_FLAGS  "-std=c11")
