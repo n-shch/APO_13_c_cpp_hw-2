@@ -23,7 +23,6 @@ struct list_t {
 
 int list_size(struct list_t *list);
 struct list_t *list_new();
-void list_free(struct list_t *list);
 void list_push(struct list_t *list, const char *url);
 struct node_t *list_pop(struct list_t *list);
 void list_print(struct list_t *list);
