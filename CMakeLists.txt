@@ -21,17 +21,11 @@ add_subdirectory(test)
 #
 
 include_directories("${PROJECT_SOURCE_DIR}/include")
-add_executable(${PROJECT_NAME} src/main.c src/list.c)
 
-add_library(static_lib STATIC ${PROJECT_SOURCE_DIR}/src/utils.c)
-add_library(shared_lib SHARED ${PROJECT_SOURCE_DIR}/src/utils.c)
+file(GLOB sources
+        "${PROJECT_SOURCE_DIR}/include/testy/*.h"
+        "${PROJECT_SOURCE_DIR}/src/*.c")
 
-if(UNIX AND NOT APPLE)
-    set(CMAKE_REQUIRED_LIBRARIES m)
-    target_link_libraries(static_lib m)
-    target_link_libraries(shared_lib m)
-endif()
 
-target_link_libraries(${PROJECT_NAME} static_lib shared_lib)
-
+add_executable(crawler ${sources})
 
