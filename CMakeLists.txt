@@ -21,11 +21,11 @@ add_subdirectory(test)
 #
 
 include_directories("${PROJECT_SOURCE_DIR}/include")
+add_executable(${PROJECT_NAME} src/main.c src/list.c)
 
-file(GLOB sources
-        "${PROJECT_SOURCE_DIR}/include/testy/*.h"
-        "${PROJECT_SOURCE_DIR}/src/*.c")
+add_library(static_lib STATIC ${PROJECT_SOURCE_DIR}/src/utils.c)
+add_library(shared_lib SHARED ${PROJECT_SOURCE_DIR}/src/utils.c)
 
+target_link_libraries(${PROJECT_NAME} static_lib shared_lib)
 
-add_executable(crawler ${sources})
 
