@@ -124,7 +124,7 @@ int iteration_list(char *origin_url, int count, char *origin_dir_name, struct li
     }
 
     off_t myfsz = mystat.st_size;
-    printf("docs size is: %ld\n", myfsz);
+    printf("docs size is: %d\n", myfsz);
     char *pointer_to_mem = mmap(NULL, myfsz, PROT_READ | PROT_WRITE, MAP_SHARED, myfd, 0);
     if (pointer_to_mem == MAP_FAILED) {
         close(myfd);
